@@ -44,7 +44,7 @@ export default function Navbar() {
       {/* left side  */}
       <section ref={animationParent} className="flex items-center lg:gap-36">
         {/* logo */}
-        <Image src={logo} className="w-48" alt=" logo" />
+        <Image src={logo} className="w-48" alt=" logo"/>
         {isSideMenuOpen && <MobileNav closeSideMenu={closeSideMenu} />}
         <div className="hidden md:flex items-center gap-1 transition-all">
           {navItems.map((d, i) => (
@@ -122,11 +122,7 @@ export default function Navbar() {
 
       {/* right side data */}
       <section className=" hidden md:flex   items-center gap-8 ">
-        <button className="inline-flex  items-center justify-center gap-2 whitespace-nowrap px-5 text-sm tracking-wide text-white my-5 bg-blue-900 hover:bg-gradient-to-br from-[#00B2FF] to-[#F4AADC] font-medium py-2 rounded-full shadow-xl z-10 transition duration-1000">
-          <Link href="/login">
-            <span>Login</span>
-          </Link>
-        </button>
+
       </section>
 
       <FiMenu

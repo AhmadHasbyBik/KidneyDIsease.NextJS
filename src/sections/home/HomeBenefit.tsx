@@ -10,8 +10,7 @@ const benefits = [
   {
     bgColor: "bg-gradient-to-br from-[#4FFFC0] to-[#00B2FF]",
     title: "Kista Ginjal",
-    description:
-      "Kantong berisi cairan yang dapat berkembang di dalam ginjal.",
+    description: "Kantong berisi cairan yang dapat berkembang di dalam ginjal.",
     icon: "/home/benefit/viruses-solid.svg",
   },
   {
@@ -78,15 +77,6 @@ const HomeBenefit = () => {
           height={220}
         />
       </div>
-      <a
-        href="https://wa.me/62895380894600"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <div className="fixed right-5 bottom-5 z-50">
-          <Image src="/home/wa.svg" alt="wa" width={80} height={80} />
-        </div>
-      </a>
       <Container className="lg:py-24">
         <div className="flex flex-col-reverse lg:flex-row gap-10">
           <div className="basis-1/2">

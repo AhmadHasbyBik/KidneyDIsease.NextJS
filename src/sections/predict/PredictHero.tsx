@@ -1,17 +1,15 @@
-"use client";
-import { useState, useEffect } from "react";
 import Image from "next/image";
 // components
 import Container from "@/components/Container";
 import Heading from "@/components/typography/Heading";
 import Paragraph from "@/components/typography/Paragraph";
+import Link from "next/link";
 
 const benefits = [
   {
     bgColor: "bg-gradient-to-br from-[#4FFFC0] to-[#00B2FF]",
     title: "Kista Ginjal",
-    description:
-      "Kantong berisi cairan yang dapat berkembang di dalam ginjal.",
+    description: "Kantong berisi cairan yang dapat berkembang di dalam ginjal.",
     icon: "/home/benefit/viruses-solid.svg",
   },
   {
@@ -37,23 +35,9 @@ const benefits = [
   },
 ];
 
-const PredictBenefit = () => {
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  const handleScroll = () => {
-    const position = window.pageYOffset;
-    setScrollPosition(position);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
+export default function PredictHero() {
   return (
-    <div className="relative -mt-20">
+    <div className="relative">
       <div className="absolute -left-10 -bottom-20 -z-10">
         <Image
           src="/home/circle3.svg"
@@ -74,19 +58,10 @@ const PredictBenefit = () => {
         <Image
           src="/home/circle6.svg"
           alt="Circle 6"
-          width={220}
+          width={210}
           height={220}
         />
       </div>
-      <a
-        href="https://wa.me/62895380894600"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <div className="fixed right-5 bottom-5 z-50">
-          <Image src="/home/wa.svg" alt="wa" width={80} height={80} />
-        </div>
-      </a>
       <Container className="lg:py-24">
         <div className="flex flex-col-reverse lg:flex-row gap-10">
           <div className="basis-1/2">
@@ -151,6 +126,4 @@ const PredictBenefit = () => {
       </Container>
     </div>
   );
-};
-
-export default PredictBenefit;
+}

@@ -2,6 +2,7 @@
 import Container from "@/components/Container";
 import Paragraph from "@/components/typography/Paragraph";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HomeExplore() {
   return (
@@ -9,8 +10,14 @@ export default function HomeExplore() {
       <div className="absolute left-0 -bottom-80 -z-20">
         <Image src="/home/spark1.svg" alt="spark" width={700} height={700} />
       </div>
-      <div className="absolute -top-40 -z-10">
-        <Image src="/home/circle9.svg" alt="spark" width={1440} height={535} />
+      <div className="absolute -top-40 -z-10 w-full">
+        <Image
+          src="/home/circle9.svg"
+          alt="spark"
+          layout="responsive"
+          width={1440}
+          height={535}
+        />
       </div>
       <Container>
         <div className="relative flex justify-center items-center w-full h-[400px] rounded-[50px] bg-gradient-to-br from-[#6765EF] to-[#8C8BEA] shadow-3xl mt-10">
@@ -24,12 +31,15 @@ export default function HomeExplore() {
                 Butuh solusi cek kesehatan ginjalmu?
               </h2>
               <Paragraph className="text-white text-sm lg:text-lg text-center sm:w-[60%] z-10">
-              Mari cek kesehatan ginjal kamu dengan upload gambar CT scan ginjalmu, maka AI kami akan mendeteksi ginjalmu!
+                Mari cek kesehatan ginjal kamu dengan upload gambar CT scan
+                ginjalmu, maka AI kami akan mendeteksi ginjalmu!
               </Paragraph>
             </div>
-            <button className="my-5 bg-blue-900 hover:bg-gradient-to-br from-[#00B2FF] to-[#F4AADC] text-white font-medium py-2 px-4 rounded-full shadow-xl z-10 transition duration-1000">
-              Cek disini!
-            </button>
+            <Link href="/predict">
+              <button className="my-5 bg-blue-900 hover:bg-gradient-to-br from-[#00B2FF] to-[#F4AADC] text-white font-medium py-2 px-4 rounded-full shadow-xl z-10 transition duration-1000">
+                Cek disini!
+              </button>
+            </Link>
           </div>
         </div>
       </Container>
