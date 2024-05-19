@@ -6,7 +6,6 @@ import axios from "axios";
 export default function PredictImage() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [prediction, setPrediction] = useState("");
-  const [accuracy, setAccuracy] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const handleFileChange = (e: any) => {
@@ -33,15 +32,12 @@ export default function PredictImage() {
         }
       );
 
-      const { prediction, accuracy } = response.data;
+      const { prediction } = response.data;
       setPrediction(prediction);
-      setAccuracy(accuracy);
 
-      // Update formData with prediction and accuracy
       setFormData((prevData) => ({
         ...prevData,
         prediction: prediction,
-        accuracy: accuracy,
       }));
     } catch (error) {
       console.error("Prediction failed:", error);
@@ -65,7 +61,6 @@ export default function PredictImage() {
     weight: "",
     recipientEmail: "",
     prediction: "",
-    accuracy: "",
     image: "",
   });
 
@@ -142,7 +137,6 @@ export default function PredictImage() {
 
             {prediction && (
               <div className="flex flex-col justify-center items-center text-white mt-3">
-                {" "}
                 {/* Added margin top here */}
                 <div className="bg-[#F4AADC] p-3 rounded-lg text-center">
                   <h3 className="text-sm sm:text-lg font-semibold">
@@ -150,22 +144,15 @@ export default function PredictImage() {
                   </h3>
                   <p>{prediction}</p>
                 </div>
-                <div className="bg-[#00B2FF] p-3 rounded-lg mt-3 text-center">
-                  <h3 className="text-sm sm:text-lg font-semibold">
-                    Accuracy :
-                  </h3>
-                  <p>{accuracy}</p>
-                </div>
               </div>
             )}
           </div>
         </div>
       </div>
       <div>
-        
         <form onSubmit={handleSubmitForm}>
           <div className="flex flex-col w-96 mx-auto items-center rounded-2xl bg-white shadow-md border border-gray-200 p-5 relative">
-          <div className="mt-2 mb-3">Kirim Data Anda lewat Email</div>
+            <div className="mt-2 mb-3">Kirim Data Anda lewat Email</div>
             <div className="absolute inset-x-0 top-0 h-5 rounded-t-2xl bg-gradient-to-br from-[#00B2FF] to-[#F4AADC]" />
             <div className="flex flex-col space-y-4">
               <div>
